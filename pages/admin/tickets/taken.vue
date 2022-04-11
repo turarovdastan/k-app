@@ -354,7 +354,8 @@ export default {
     }
     &-items{
       .h4{
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 16px;
       }
       .h5{
         font-size: 15px;
