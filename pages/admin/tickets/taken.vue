@@ -52,7 +52,7 @@
             </div>
             <div class="tooltip-item">
               <img src="@/assets/icons/admin/tooltip-chat.svg" alt="">
-              <div class="h4">Взять</div>
+              <div class="h4">Перейти в чат</div>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ export default {
         right: 16px;
         bottom: -78px;
         z-index: 2;
-        width: 161px;
+        min-width: 161px;
         min-height: 96px;
         background: rgba(255, 255, 255, 0.82);
         box-shadow: 2px 4px 15px rgba(62, 67, 104, 0.15);

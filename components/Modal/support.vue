@@ -212,7 +212,7 @@ export default {
         box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.06);
         border-radius: 16px;
         align-self: flex-end;
-        padding: 24px 22px;
+        padding-bottom: 16px;
         // position: relative;
         .message{
             background: #F9F9F9;
@@ -275,6 +275,7 @@ export default {
             }
         }
         .chat-container{
+            padding: 16px 8px;
             height: 70%;
             overflow-y: scroll;
             display: flex;

@@ -111,6 +111,7 @@ export default {
   }
   & > h2{
     margin-bottom: 24px;
+    font-weight: 700;
   }
   .close{
     position: absolute;
@@ -121,6 +122,9 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    h4{
+      font-weight: 600;
+    }
     &-documents{
       display: grid;
       grid-template-columns: 1fr 1fr;

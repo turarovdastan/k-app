@@ -80,6 +80,15 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
+  .nav-links{
+  .link:not(:first-child)::before{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 22px;
+    background: $s-dark-grey;
+    }
+  }
   @media (max-width:800px) {
     padding: 15px 16px;
     border-radius: 30px 30px 0px 0px;
