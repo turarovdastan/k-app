@@ -57,7 +57,7 @@
           <h5 class="h5 id">ID 31877</h5>
         </div>
       </div>
-      <UI-BTN @onclick="$emit('close')" v-if="type === 'missed' || type === 'taken'" :text="type === 'missed' ? 'Взять' : 'Открыть чат'" style="margin-top:38px;" />
+      <UI-BTN @onclick="$emit('close')" styleText="font-weight: 400;" v-if="type === 'missed' || type === 'taken'" :text="type === 'missed' ? 'Взять' : 'Открыть чат'" class="mt38" />
     </div>
   </div>
 </template>
@@ -92,6 +92,9 @@ export default {
     align-items: flex-start;
   }
 }
+.mt38{
+  margin-top: 38px;
+}
 .more-container::-webkit-scrollbar{
   display: none;
 }
@@ -111,7 +114,6 @@ export default {
   }
   & > h2{
     margin-bottom: 24px;
-    font-weight: 700;
   }
   .close{
     position: absolute;
@@ -122,9 +124,6 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    h4{
-      font-weight: 600;
-    }
     &-documents{
       display: grid;
       grid-template-columns: 1fr 1fr;

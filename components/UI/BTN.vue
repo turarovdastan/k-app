@@ -1,6 +1,6 @@
 <template>
     <button @click="$emit('onclick')">
-        <span v-show="!isLoading">{{text}}</span>
+        <span :style="styleText" v-show="!isLoading">{{text}}</span>
         <div v-show="isLoading" class="loaders">
             <div class="loader"></div>
             <div class="loader"></div>
@@ -12,6 +12,10 @@
 <script>
 export default {
     props: {
+        styleText:{
+          type: String,
+          default: ''
+        },
         text: {
             type: String,
             required: true,
