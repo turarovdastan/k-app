@@ -9,8 +9,8 @@
           <nuxt-link active-class="active" class="link h3-regular" to="/admin/tickets/closed">Закрытые(28)</nuxt-link>
         </div>
         <div class="input-search">
-          <img src="@/assets/icons/admin/search.svg" alt="">
-          <input type="text" placeholder="Найти тикет...">
+          <img v-if="searchModel.length <= 0" src="@/assets/icons/admin/search.svg" alt="">
+          <input type="text" v-model="searchModel" placeholder="Найти тикет...">
         </div>
         <div @click="sortModal = !sortModal" class="sort-by-date">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,8 @@
 export default {
     layout: 'admin',
     data: () => ({
-      sortModal: false
+      sortModal: false,
+      searchModel: ''
     }),
     mounted() {
       window.addEventListener('click',(event) => {

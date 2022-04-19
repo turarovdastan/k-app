@@ -1,7 +1,7 @@
 <template>
 <div class="missed">
   <div  class="table">
-    <div v-if="!mediaWidth.matches" class="table-head">
+    <div class="table-head">
       <div class="table-head-col h4">№</div>
       <div class="table-head-col h4">Пользователь</div>
       <div class="table-head-col sort-by-date">
@@ -28,7 +28,7 @@
       <div class="table-head-col h4">Описание проблемы</div>
       <div class="table-head-col h4"></div>
     </div>
-    <div v-if="!mediaWidth.matches" class="table-body">
+    <div class="table-body">
       <div v-for="user of +count" :key="user" class="row">
         <div class="table-body-col h5">#1721</div>
         <div class="table-body-col h5">
@@ -42,7 +42,7 @@
           <div class="h5 text-grey">15:30</div>
         </div>
         <div class="table-body-col h5">Не работает кнопка добавить запись</div>
-        <div @click="modalData = {}"  class="table-body-col h5" style="cursor:pointer">Когда пытаюсь добавить новую запись, все кнопки работают, но кнопка «Добавить запись» не доступна</div>
+        <div @click="modalData = {}"  class="table-body-col desc h5" style="cursor:pointer">Когда пытаюсь добавить новую запись, все кнопки работают, но кнопка «Добавить запись» не доступна</div>
         <div class="table-body-col h5 shower">
           <img @click="onTooltip(user)" src="@/assets/icons/admin/settings.svg" alt="">
           <div class="tooltip" :ref="user">
@@ -58,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="table-body-media">
+    <div class="table-body-media">
       <div v-for="user of +count" :key="user" class="media">
         <div class="media-header">
             <div class="user">
@@ -129,10 +129,8 @@ export default {
     count: 10,
     modalData:null,
     sortModal: false,
-    mediaWidth: {}
   }),
   mounted() {
-    this.mediaWidth = window.matchMedia( "(max-width: 1000px)" );
     window.addEventListener('click',(event) => {
       const target = event.target;
       const tooltip = target.closest('.tooltip');
@@ -186,6 +184,9 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 2fr 4fr .5fr;
+    @media (max-width: 1000px) {
+      display: none;
+    }
     .sort-by-date{
       display: flex;
       align-items: center;
@@ -241,6 +242,9 @@ export default {
   &-body{
     display: flex;
     flex-direction: column;
+    @media (max-width: 1000px) {
+      display: none;
+    }
     .row{
       width: 100%;
       display: grid;
@@ -288,6 +292,19 @@ export default {
           gap: 12px;
       }
     }
+    .desc{
+      overflow:hidden;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+    }
+    .row:nth-child(2n){
+      .table-body-col{
+        background: #F9F9F9;
+      }
+    }
     .active{
       display: flex;
     }
@@ -304,7 +321,7 @@ export default {
   }
 }
 .table-body-media{
-  display: grid;
+  display: none;
   grid-template-columns: repeat(auto-fit, minmax(360px, calc(100% / 4 - 20px * 4)));
   grid-gap: 20px;
   @media (max-width:812px) {
@@ -366,6 +383,9 @@ export default {
         margin-top: 8px;
       }
     }
+  }
+  @media (max-width: 1000px) {
+    display: grid;
   }
 }
 .missed-footer{

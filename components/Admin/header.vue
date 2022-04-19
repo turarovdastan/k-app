@@ -179,6 +179,9 @@ export default {
     display: block;
     padding: 22px 16px;
     background: $s-purple;
+    .admin-title{
+      margin-left: 55px;
+    }
   }
 }
 .nav-links{
