@@ -4,9 +4,9 @@
     <main class="tickets-page">
       <nav>
         <div class="nav-links">
-          <nuxt-link active-class="active" class="link h3-regular" to="/admin/tickets/missed">Невзятые(34)</nuxt-link>
-          <nuxt-link active-class="active" class="link h3-regular" to="/admin/tickets/taken">Взятые(12)</nuxt-link>
-          <nuxt-link active-class="active" class="link h3-regular" to="/admin/tickets/closed">Закрытые(28)</nuxt-link>
+          <nuxt-link active-class="active" class="link h3" to="/admin/tickets/missed">Невзятые(34)</nuxt-link>
+          <nuxt-link active-class="active" class="link h3" to="/admin/tickets/taken">Взятые(12)</nuxt-link>
+          <nuxt-link active-class="active" class="link h3" to="/admin/tickets/closed">Закрытые(28)</nuxt-link>
         </div>
         <div class="input-search">
           <img v-if="searchModel.length <= 0" src="@/assets/icons/admin/search.svg" alt="">
@@ -89,7 +89,11 @@ export default {
     height: 22px;
     background: $s-dark-grey;
     }
+    .link{
+      
+    }
   }
+
   @media (max-width:800px) {
     padding: 15px 16px;
     border-radius: 30px 30px 0px 0px;

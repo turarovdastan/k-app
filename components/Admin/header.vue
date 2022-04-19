@@ -44,9 +44,9 @@
     </div>
   </header>
   <div class="nav-links">
-    <nuxt-link active-class="active" class="link h2" to="/admin/tickets/missed">Невзятые(34)</nuxt-link>
-    <nuxt-link active-class="active" class="link h2" to="/admin/tickets/taken">Взятые(12)</nuxt-link>
-    <nuxt-link active-class="active" class="link h2" to="/admin/tickets/closed">Закрытые(28)</nuxt-link>
+    <nuxt-link active-class="active" class="link h5-medium" to="/admin/tickets/missed">Невзятые(34)</nuxt-link>
+    <nuxt-link active-class="active" class="link h5-medium" to="/admin/tickets/taken">Взятые(12)</nuxt-link>
+    <nuxt-link active-class="active" class="link h5-medium" to="/admin/tickets/closed">Закрытые(28)</nuxt-link>
   </div>
 </div>
 </template>
