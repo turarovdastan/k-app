@@ -41,7 +41,7 @@
           <div class="h5">03.12.2021</div>
           <div class="h5 text-grey">15:30</div>
         </div>
-        <div class="table-body-col h5">Не работает кнопка добавить запись</div>
+        <div class="table-body-col h5 title">Не работает кнопка добавить запись</div>
         <div @click="modalData = {}"  class="table-body-col desc h5 " style="cursor:pointer">Когда пытаюсь добавить новую запись, все кнопки работают, но кнопка «Добавить запись» не доступна</div>
         <div class="table-body-col h5 shower">
           <img @click="onTooltip(user)" src="@/assets/icons/admin/settings.svg" alt="">
@@ -70,7 +70,7 @@
             </div>
             <img @click="onTooltip(user)" class="shower" src="@/assets/icons/admin/settings.svg" alt="">
             <div class="tooltip" :ref="user">
-              <div @click="modalData = {}" class="tooltip-item">
+              <div class="tooltip-item">
                 <img src="@/assets/icons/admin/tooltip-more.svg" alt="">
                 <div class="h4-regular">Подробнее</div>
               </div>
@@ -152,6 +152,7 @@ export default {
   },
   methods:{
     onTooltip(ref) {
+      this.$refs[ref][1].classList.toggle('active')
       this.$refs[ref][0].classList.toggle('active')
     },
   }
@@ -183,10 +184,13 @@ export default {
   &-head{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 2fr 4fr .5fr;
+    grid-template-columns: .7fr 1.5fr 1.5fr 2fr 4fr .5fr;
       @media (max-width: 1000px) {
         display: none;
       }
+    @media (max-width:1200px) {
+        grid-template-columns: 1fr 2fr 2fr 3fr 3fr .5fr;
+    }
     .sort-by-date{
       display: flex;
       align-items: center;
@@ -248,10 +252,15 @@ export default {
     .row{
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1.5fr 1.5fr 2fr 4fr .5fr;
+      grid-template-columns: .7fr 1.5fr 1.5fr 2fr 4fr .5fr;
       box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.04);
       position: relative;
       background: #F9F9F9;
+    }
+    @media (max-width:1200px) {
+      .row{
+        grid-template-columns: 1fr 2fr 2fr 3fr 3fr .5fr;
+      }
     }
     &-col{
       background: $bg-white;
@@ -293,7 +302,7 @@ export default {
           gap: 12px;
       }
     }
-    .desc{
+    .title,.desc{
       overflow:hidden;
       -webkit-box-orient: vertical;
       display: -webkit-box;

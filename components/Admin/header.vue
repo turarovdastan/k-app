@@ -71,7 +71,12 @@ export default {
           this.sideBarModal = false
         }
       })
+    },
+  computed:{
+    linkIsActive() {
+      return this.$route.fullPath.includes('tickets');
     }
+  }
 }
 </script>
 

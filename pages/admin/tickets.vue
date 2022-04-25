@@ -90,7 +90,7 @@ export default {
     background: $s-dark-grey;
     }
     .link{
-      
+      font-family: 'Inter';
     }
   }
 
