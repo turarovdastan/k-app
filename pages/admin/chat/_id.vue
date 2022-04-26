@@ -262,6 +262,7 @@ export default {
       border-radius: 12px;
       align-self: flex-end;
       color: $f-black;
+      position: relative;
       .chat-id-chat-message-date{
         color: $s-dark-grey;
       }

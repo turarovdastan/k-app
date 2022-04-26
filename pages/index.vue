@@ -15,6 +15,9 @@ export default {
   data: () => ({
     authModal: false,
   }),
+  mounted() {
+      document.body.classList.remove('modal-open')
+  },
   methods: {
     showModal() {
         this.authModal = true;

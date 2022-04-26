@@ -47,6 +47,7 @@ export default {
       searchModel: ''
     }),
     mounted() {
+      document.body.classList.remove('modal-open')
       window.addEventListener('click',(event) => {
         const target = event.target;
         const sortDate = target.closest('.sort-toolbar');

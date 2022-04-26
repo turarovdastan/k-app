@@ -48,6 +48,9 @@ export default {
         return this.$store.state.users.slice(this.$route.params.id, this.$route.params.id + 1)[0]
       },
     },
+    mounted() {
+      document.body.classList.add('modal-open')
+    },
     methods: {
       changeUser(i){
         const info = {
@@ -80,7 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/css/vars.scss';
-
 .chat-container{
   box-shadow: -4px 0px 12px rgba(0, 0, 0, 0.04);
   border-radius: 32px 0px 0px 32px;
@@ -104,7 +106,7 @@ export default {
   }
   @media (max-width: 1460px) {
     & {
-      grid-template-columns: .5fr 1fr;
+      grid-template-columns: .6fr 1fr;
     }
   }
   .chats{
